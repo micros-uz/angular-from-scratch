@@ -1,9 +1,20 @@
 1) simple binding (searchText)
 2) simple ng-repeat + ng-init (customers list)
 3) add filter by searchText
+
 4) ng-init - не красиво. Add module (just container).
 5) add empty controller. $scope - viewmodel
 6) ng-app = "customersApp" - связать модуль
 7) ng-controller="CustomersCtrl" - связать контроллер с дивом через $scope
 8) change table to display all customer fields
 9) add currency filter
+
+10) add new dependency to the module - ngRoute
+11) add route provider configuration
+12) add views folder and move div there
+13) add ng-view div
+14) add OrdersController
+15) add orderBy filter
+16) Convert name of customer to link
+17) add simple demo Orders view
+18) try to open in browser (need to host on WEB server because views are opened only in HTTP mode)
