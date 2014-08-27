@@ -1,0 +1,3 @@
+1) simple binding (searchText)
+2) simple ng-repeat + ng-init (customers list)
+3) add filter by searchText

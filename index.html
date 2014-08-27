@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Angular App</title>
+	<!--<link rel="stylesheet" type="text/css" href="styles/animations.css">-->
+</head>
+<body ng-init="customers=['Max', 'Nick','Ted', 'Tim', 'Alex']">
+	<h1>Demo Angular App</h1>
+
+	<div>
+		Search: <input type="text" ng-model="searchText"/>
+		{{searchText}}
+		<br/>
+		<h3>Customers:</h3>
+		<table>
+			<tr ng-repeat="cust in customers | filter:searchText" >
+				<td>{{cust}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<!--<script src="js/angular-animation.min.js"></script>-->
+</body>
+</html>
+
+
+
+	
+
+
