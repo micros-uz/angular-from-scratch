@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="customersApp">
 <head>
 	<title>Angular App</title>
 	<!--<link rel="stylesheet" type="text/css" href="styles/animations.css">-->
 </head>
-<body ng-init="customers=['Max', 'Nick','Ted', 'Tim', 'Alex']">
+<body>
 	<h1>Demo Angular App</h1>
 
-	<div>
+	<div ng-controller="CustomersCtrl">
 		Search: <input type="text" ng-model="searchText"/>
 		{{searchText}}
 		<br/>
 		<h3>Customers:</h3>
 		<table>
 			<tr ng-repeat="cust in customers | filter:searchText" >
-				<td>{{cust}}</td>
+				<td>{{cust.name}}</td>
+				<td>{{cust.total | currency}}</td>
 			</tr>
 		</table>
 	</div>
@@ -22,6 +23,20 @@
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
 	<!--<script src="js/angular-animation.min.js"></script>-->
+
+	<script type="text/javascript">
+		var app = angular.module('customersApp', []);
+
+		app.controller('CustomersCtrl', function($scope){
+			$scope.customers = [
+				{id: 1, name: "Ted", total: 8.445},
+				{id: 2, name: "Max", total: 10.309},
+				{id: 3, name: "Tim", total: 2.230},
+				{id: 4, name: "Alex", total: 3.445},
+				{id: 5, name: "Nick", total: 8.391},
+			];
+		})
+	</script>
 </body>
 </html>
 

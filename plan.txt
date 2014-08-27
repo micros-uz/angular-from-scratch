@@ -1,3 +1,9 @@
 1) simple binding (searchText)
 2) simple ng-repeat + ng-init (customers list)
 3) add filter by searchText
+4) ng-init - не красиво. Add module (just container).
+5) add empty controller. $scope - viewmodel
+6) ng-app = "customersApp" - связать модуль
+7) ng-controller="CustomersCtrl" - связать контроллер с дивом через $scope
+8) change table to display all customer fields
+9) add currency filter
