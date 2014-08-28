@@ -2,19 +2,19 @@
 <html ng-app="customersApp">
 <head>
 	<title>Angular App</title>
-	<!--<link rel="stylesheet" type="text/css" href="styles/animations.css">-->
+	<link rel="stylesheet" type="text/css" href="styles/animations.css">
 </head>
 <body>
 	<h1>Demo Angular App</h1>
 
-	<div ng-view></div>
+	<div ng-view class="slide-animation"></div>
 
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
-	<!--<script src="js/angular-animation.min.js"></script>-->
+	<script src="js/angular-animate.js"></script>
 
 	<script type="text/javascript">
-		var app = angular.module('customersApp', ['ngRoute']);
+		var app = angular.module('customersApp', ['ngRoute', 'ngAnimate']);
 
 		app.config(function($routeProvider){
 			$routeProvider.when('/',
