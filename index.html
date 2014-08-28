@@ -34,20 +34,26 @@
 		});
 
 		app.controller('CustomersCtrl', function($scope, customersFactory){
-			$scope.customers = customersFactory.getCustomers();
+			customersFactory.getCustomers().success(function(data){
+				$scope.customers = [{id: data.id, name:data.content}];
+
+			}).error(function(data, status, headers, config) {
+			                console.log("error!")
+		    });
 		})
 
-		app.factory('customersFactory', function(){
+		app.config(function($httpProvider){
+		    //delete $httpProvider.defaults.headers.common['Origin', 'Referer'];
+        	//$httpProvider.defaults.useXDomain = true;
+        	//$httpProvider.defaults.headers.common = 'Content-Type: application/json';
+        	delete $httpProvider.defaults.headers.common['X-Requested-With'];		    
+		});
+
+		app.factory('customersFactory', function($http){
 			var factory = {};
 
 			factory.getCustomers = function(){
-				return [
-					{id: 1, name: "Ted", total: 8.445},
-					{id: 2, name: "Max", total: 10.309},
-					{id: 3, name: "Tim", total: 2.230},
-					{id: 4, name: "Alex", total: 3.445},
-					{id: 5, name: "Nick", total: 8.391},
-				];
+				return $http.get('http://rest-service.guides.spring.io/greeting');
 			};
 
 			return factory;
