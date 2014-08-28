@@ -18,3 +18,6 @@
 16) Convert name of customer to link
 17) add simple demo Orders view
 18) try to open in browser (need to host on WEB server because views are opened only in HTTP mode)
+
+19) Add Customers factory (singleton, hardcoded data)
+20) Add $http load
